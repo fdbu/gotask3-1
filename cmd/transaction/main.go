@@ -32,7 +32,7 @@ func main() {
 				Id:     2,
 				Amount: 120391,
 				Date:   "2020-07-18 13:54:40 +0000 UTC",
-				Mcc:    "5812",
+				Mcc:    "5533",
 				Status: "done",
 			},
 		},
@@ -40,4 +40,6 @@ func main() {
 	card.AddTransaction(master, t)
 	mcc := []string{"5411", "5812"}
 	fmt.Println(card.SumByMCC(master.Transactions, mcc))
+	category := card.TranslateMCC(master.Transactions[2].Mcc)
+	fmt.Println(category)
 }
